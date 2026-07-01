@@ -1,0 +1,638 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="renderer">
+      <UniqueIdentifier>{5d293270-1fde-4d04-9b6f-c56d338969d8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="features">
+      <UniqueIdentifier>{fd89b327-ea90-487f-9c58-00d7d30bd058}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="headers">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="main">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="imgui">
+      <UniqueIdentifier>{73e4a872-d9f4-456d-8675-b943ff8efb75}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ui">
+      <UniqueIdentifier>{1607b016-a9cf-409d-9473-003b6dd2a1e0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ui\include">
+      <UniqueIdentifier>{8ace3dfd-29e0-4fa2-8061-e329df011f38}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="features\native">
+      <UniqueIdentifier>{84fd26c0-e490-453a-b935-dc991caf30ec}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="features\main">
+      <UniqueIdentifier>{ad0c0f3f-c5b9-4b29-8fad-4ea8bc1b57d4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="main\protection">
+      <UniqueIdentifier>{bd89802d-e416-4c75-8d6a-5551b8003f4f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="main\protection\oxorany">
+      <UniqueIdentifier>{1bd1fd50-3c37-4cdf-b055-7facafa2cff7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="features\utils">
+      <UniqueIdentifier>{81f0ee2c-96fe-4e2a-8f7e-7a59a466b503}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ui\content %28tabs%29">
+      <UniqueIdentifier>{698b50ab-a2c7-4d85-bbc0-5eb335259a87}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ui\widgets %28old%29">
+      <UniqueIdentifier>{b3ec3cee-f99e-4d1d-baee-77ebaaeac198}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ui\widgets">
+      <UniqueIdentifier>{57067a1c-775a-4924-8d3e-2153db45a0f7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ui\widgets\switchers">
+      <UniqueIdentifier>{dc5a8809-d5b9-41f9-886a-3d9c31e8398d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ui\widgets\exact value">
+      <UniqueIdentifier>{c5bc8ae6-092c-45cc-9d62-4e1b882be0b4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ui\widgets\frames">
+      <UniqueIdentifier>{ced9c69e-f77b-4c03-8f18-0277e06ef5ed}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ui\widgets\misc">
+      <UniqueIdentifier>{5d1a511c-53e4-4b1b-9808-39b44149e18d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ui\include\cursor">
+      <UniqueIdentifier>{20c9fe57-46b8-42ef-ae15-8cc61fe30393}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="includes">
+      <UniqueIdentifier>{5478a235-9fe2-4015-877a-8f03ef08e911}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="includes\fixedcontainers">
+      <UniqueIdentifier>{d2762fdc-c318-4065-9b37-9760b65b98dc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="features\main\functions">
+      <UniqueIdentifier>{d5abe2e8-7520-42a1-b50f-0ddef6d5273b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="features\main\functions\player">
+      <UniqueIdentifier>{81069bc4-9345-4a90-a95e-fd7cda5327a9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="features\main\functions\vehicle">
+      <UniqueIdentifier>{86e01611-ca62-42b6-a60d-27b1d7348722}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="features\main\functions\visuals">
+      <UniqueIdentifier>{7d2f5d5a-6712-4d91-8c6e-311f6ae64576}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="features\main\functions\rage">
+      <UniqueIdentifier>{95d1c0b5-f8d7-48f6-92d0-5d2107e2984e}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="imports.h">
+      <Filter>headers</Filter>
+    </ClInclude>
+    <ClInclude Include="pointers.hpp">
+      <Filter>headers</Filter>
+    </ClInclude>
+    <ClInclude Include="structs.h">
+      <Filter>headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\includes\renderer\rend_features.h">
+      <Filter>renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="hooks.hpp">
+      <Filter>main</Filter>
+    </ClInclude>
+    <ClInclude Include="c_config.hpp">
+      <Filter>main</Filter>
+    </ClInclude>
+    <ClInclude Include="game.hpp">
+      <Filter>main</Filter>
+    </ClInclude>
+    <ClInclude Include="logger.h">
+      <Filter>headers</Filter>
+    </ClInclude>
+    <ClInclude Include="functions.h">
+      <Filter>headers</Filter>
+    </ClInclude>
+    <ClInclude Include="fiber.hpp">
+      <Filter>features\native</Filter>
+    </ClInclude>
+    <ClInclude Include="tick.hpp">
+      <Filter>features\native</Filter>
+    </ClInclude>
+    <ClInclude Include="database.hpp">
+      <Filter>features\native</Filter>
+    </ClInclude>
+    <ClInclude Include="maps.hpp">
+      <Filter>features\native</Filter>
+    </ClInclude>
+    <ClInclude Include="..\includes\imgui\imconfig.h">
+      <Filter>imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="..\includes\imgui\imgui.h">
+      <Filter>imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="..\includes\imgui\imgui_impl_dx11.h">
+      <Filter>imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="..\includes\imgui\imgui_impl_win32.h">
+      <Filter>imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="..\includes\imgui\imgui_internal.h">
+      <Filter>imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="..\includes\imgui\imstb_rectpack.h">
+      <Filter>imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="..\includes\imgui\imstb_textedit.h">
+      <Filter>imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="..\includes\imgui\imstb_truetype.h">
+      <Filter>imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="features\aimbot.hpp">
+      <Filter>features\main</Filter>
+    </ClInclude>
+    <ClInclude Include="features\esp.hpp">
+      <Filter>features\main</Filter>
+    </ClInclude>
+    <ClInclude Include="features\hacks.hpp">
+      <Filter>features\main</Filter>
+    </ClInclude>
+    <ClInclude Include="ui\c_ui.h">
+      <Filter>ui</Filter>
+    </ClInclude>
+    <ClInclude Include="ui\include\fonts_data.h">
+      <Filter>ui\include</Filter>
+    </ClInclude>
+    <ClInclude Include="ui\include\imstb_wrapper.h">
+      <Filter>ui\include</Filter>
+    </ClInclude>
+    <ClInclude Include="ui\include\esp_fonts_data.h">
+      <Filter>ui\include</Filter>
+    </ClInclude>
+    <ClInclude Include="features\hacks_singleuse.hpp">
+      <Filter>features\main</Filter>
+    </ClInclude>
+    <ClInclude Include="live_debug.hpp">
+      <Filter>main</Filter>
+    </ClInclude>
+    <ClInclude Include="cheat_base.h">
+      <Filter>headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\includes\lazy_importer.hpp">
+      <Filter>main\protection</Filter>
+    </ClInclude>
+    <ClInclude Include="protection\strings\oxorany_include.h">
+      <Filter>main\protection\oxorany</Filter>
+    </ClInclude>
+    <ClInclude Include="protection\strings\oxorany.h">
+      <Filter>main\protection\oxorany</Filter>
+    </ClInclude>
+    <ClInclude Include="protection\shadowsyscall.hpp">
+      <Filter>main\protection</Filter>
+    </ClInclude>
+    <ClInclude Include="protection\prot_defs.h">
+      <Filter>main\protection</Filter>
+    </ClInclude>
+    <ClInclude Include="xor.h">
+      <Filter>main\protection</Filter>
+    </ClInclude>
+    <ClInclude Include="peb.hpp">
+      <Filter>main\protection</Filter>
+    </ClInclude>
+    <ClInclude Include="keybind.hpp">
+      <Filter>main</Filter>
+    </ClInclude>
+    <ClInclude Include="..\includes\hash_str.hpp">
+      <Filter>main\protection</Filter>
+    </ClInclude>
+    <ClInclude Include="ui\c_ui_misc.h">
+      <Filter>ui\widgets %28old%29</Filter>
+    </ClInclude>
+    <ClInclude Include="ui\c_fonts.h">
+      <Filter>ui\include</Filter>
+    </ClInclude>
+    <ClInclude Include="ui\content\c_ui_tabs.hpp">
+      <Filter>ui\content %28tabs%29</Filter>
+    </ClInclude>
+    <ClInclude Include="ui\widgets\c_ui_widgets.hpp">
+      <Filter>ui\widgets</Filter>
+    </ClInclude>
+    <ClInclude Include="ui\widgets\imgui_helpers.hpp">
+      <Filter>ui\widgets\misc</Filter>
+    </ClInclude>
+    <ClInclude Include="ui\include\c_cursor_wrapper.h">
+      <Filter>ui\include\cursor</Filter>
+    </ClInclude>
+    <ClInclude Include="..\includes\fixed_containers\comparison_chain.hpp">
+      <Filter>includes\fixedcontainers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\includes\fixed_containers\concepts.hpp">
+      <Filter>includes\fixedcontainers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\includes\fixed_containers\consteval_compare.hpp">
+      <Filter>includes\fixedcontainers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\includes\fixed_containers\emplace.hpp">
+      <Filter>includes\fixedcontainers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\includes\fixed_containers\enum_array.hpp">
+      <Filter>includes\fixedcontainers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\includes\fixed_containers\enum_map.hpp">
+      <Filter>includes\fixedcontainers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\includes\fixed_containers\enum_set.hpp">
+      <Filter>includes\fixedcontainers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\includes\fixed_containers\enum_utils.hpp">
+      <Filter>includes\fixedcontainers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\includes\fixed_containers\erase_if.hpp">
+      <Filter>includes\fixedcontainers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\includes\fixed_containers\filtered_integer_range_iterator.hpp">
+      <Filter>includes\fixedcontainers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\includes\fixed_containers\fixed_circular_deque.hpp">
+      <Filter>includes\fixedcontainers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\includes\fixed_containers\fixed_circular_queue.hpp">
+      <Filter>includes\fixedcontainers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\includes\fixed_containers\fixed_deque.hpp">
+      <Filter>includes\fixedcontainers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\includes\fixed_containers\fixed_doubly_linked_list.hpp">
+      <Filter>includes\fixedcontainers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\includes\fixed_containers\fixed_doubly_linked_list_raw_view.hpp">
+      <Filter>includes\fixedcontainers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\includes\fixed_containers\fixed_index_based_storage.hpp">
+      <Filter>includes\fixedcontainers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\includes\fixed_containers\fixed_list.hpp">
+      <Filter>includes\fixedcontainers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\includes\fixed_containers\fixed_map.hpp">
+      <Filter>includes\fixedcontainers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\includes\fixed_containers\fixed_map_adapter.hpp">
+      <Filter>includes\fixedcontainers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\includes\fixed_containers\fixed_queue.hpp">
+      <Filter>includes\fixedcontainers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\includes\fixed_containers\fixed_red_black_tree.hpp">
+      <Filter>includes\fixedcontainers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\includes\fixed_containers\fixed_red_black_tree_nodes.hpp">
+      <Filter>includes\fixedcontainers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\includes\fixed_containers\fixed_red_black_tree_ops.hpp">
+      <Filter>includes\fixedcontainers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\includes\fixed_containers\fixed_red_black_tree_storage.hpp">
+      <Filter>includes\fixedcontainers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\includes\fixed_containers\fixed_red_black_tree_types.hpp">
+      <Filter>includes\fixedcontainers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\includes\fixed_containers\fixed_red_black_tree_view.hpp">
+      <Filter>includes\fixedcontainers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\includes\fixed_containers\fixed_robinhood_hashtable.hpp">
+      <Filter>includes\fixedcontainers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\includes\fixed_containers\fixed_set.hpp">
+      <Filter>includes\fixedcontainers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\includes\fixed_containers\fixed_set_adapter.hpp">
+      <Filter>includes\fixedcontainers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\includes\fixed_containers\fixed_stack.hpp">
+      <Filter>includes\fixedcontainers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\includes\fixed_containers\fixed_string.hpp">
+      <Filter>includes\fixedcontainers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\includes\fixed_containers\fixed_unordered_map.hpp">
+      <Filter>includes\fixedcontainers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\includes\fixed_containers\fixed_unordered_map_raw_view.hpp">
+      <Filter>includes\fixedcontainers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\includes\fixed_containers\fixed_unordered_set.hpp">
+      <Filter>includes\fixedcontainers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\includes\fixed_containers\fixed_unordered_set_raw_view.hpp">
+      <Filter>includes\fixedcontainers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\includes\fixed_containers\fixed_vector.hpp">
+      <Filter>includes\fixedcontainers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\includes\fixed_containers\forward_iterator.hpp">
+      <Filter>includes\fixedcontainers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\includes\fixed_containers\in_out.hpp">
+      <Filter>includes\fixedcontainers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\includes\fixed_containers\index_or_value_storage.hpp">
+      <Filter>includes\fixedcontainers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\includes\fixed_containers\int_math.hpp">
+      <Filter>includes\fixedcontainers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\includes\fixed_containers\integer_range.hpp">
+      <Filter>includes\fixedcontainers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\includes\fixed_containers\integer_range_iterator.hpp">
+      <Filter>includes\fixedcontainers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\includes\fixed_containers\iterator_utils.hpp">
+      <Filter>includes\fixedcontainers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\includes\fixed_containers\map_checking.hpp">
+      <Filter>includes\fixedcontainers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\includes\fixed_containers\map_entry.hpp">
+      <Filter>includes\fixedcontainers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\includes\fixed_containers\max_size.hpp">
+      <Filter>includes\fixedcontainers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\includes\fixed_containers\memory.hpp">
+      <Filter>includes\fixedcontainers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\includes\fixed_containers\optional_reference.hpp">
+      <Filter>includes\fixedcontainers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\includes\fixed_containers\optional_reference_checking.hpp">
+      <Filter>includes\fixedcontainers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\includes\fixed_containers\optional_storage.hpp">
+      <Filter>includes\fixedcontainers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\includes\fixed_containers\out.hpp">
+      <Filter>includes\fixedcontainers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\includes\fixed_containers\pair.hpp">
+      <Filter>includes\fixedcontainers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\includes\fixed_containers\pair_view.hpp">
+      <Filter>includes\fixedcontainers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\includes\fixed_containers\preconditions.hpp">
+      <Filter>includes\fixedcontainers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\includes\fixed_containers\queue_adapter.hpp">
+      <Filter>includes\fixedcontainers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\includes\fixed_containers\random_access_iterator.hpp">
+      <Filter>includes\fixedcontainers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\includes\fixed_containers\random_access_iterator_transformer.hpp">
+      <Filter>includes\fixedcontainers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\includes\fixed_containers\ranges.hpp">
+      <Filter>includes\fixedcontainers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\includes\fixed_containers\recursive_reflection.hpp">
+      <Filter>includes\fixedcontainers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\includes\fixed_containers\recursive_reflection_fwd.hpp">
+      <Filter>includes\fixedcontainers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\includes\fixed_containers\reference_storage.hpp">
+      <Filter>includes\fixedcontainers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\includes\fixed_containers\reflection.hpp">
+      <Filter>includes\fixedcontainers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\includes\fixed_containers\sequence_container_checking.hpp">
+      <Filter>includes\fixedcontainers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\includes\fixed_containers\set_checking.hpp">
+      <Filter>includes\fixedcontainers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\includes\fixed_containers\source_location.hpp">
+      <Filter>includes\fixedcontainers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\includes\fixed_containers\stack_adapter.hpp">
+      <Filter>includes\fixedcontainers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\includes\fixed_containers\string_literal.hpp">
+      <Filter>includes\fixedcontainers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\includes\fixed_containers\struct_view.hpp">
+      <Filter>includes\fixedcontainers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\includes\fixed_containers\tuples.hpp">
+      <Filter>includes\fixedcontainers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\includes\fixed_containers\tuples_as_tuple_view.hpp">
+      <Filter>includes\fixedcontainers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\includes\fixed_containers\type_name.hpp">
+      <Filter>includes\fixedcontainers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\includes\fixed_containers\value_or_reference_storage.hpp">
+      <Filter>includes\fixedcontainers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\includes\fixed_containers\wyhash.hpp">
+      <Filter>includes\fixedcontainers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\includes\fixed_containers\algorithm.hpp">
+      <Filter>includes\fixedcontainers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\includes\fixed_containers\arrow_proxy.hpp">
+      <Filter>includes\fixedcontainers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\includes\fixed_containers\assert_or_abort.hpp">
+      <Filter>includes\fixedcontainers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\includes\fixed_containers\bidirectional_iterator.hpp">
+      <Filter>includes\fixedcontainers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\includes\fixed_containers\circular_indexing.hpp">
+      <Filter>includes\fixedcontainers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\includes\fixed_containers\circular_integer_range_iterator.hpp">
+      <Filter>includes\fixedcontainers</Filter>
+    </ClInclude>
+    <ClInclude Include="features\visuals\esp_utils.hpp">
+      <Filter>headers</Filter>
+    </ClInclude>
+    <ClInclude Include="features\visuals\objects.hpp">
+      <Filter>headers</Filter>
+    </ClInclude>
+    <ClInclude Include="features\visuals\players.hpp">
+      <Filter>headers</Filter>
+    </ClInclude>
+    <ClInclude Include="features\visuals\radar.hpp">
+      <Filter>headers</Filter>
+    </ClInclude>
+    <ClInclude Include="features\visuals\vehicles.hpp">
+      <Filter>headers</Filter>
+    </ClInclude>
+    <ClInclude Include="features\functions\player\health.hpp">
+      <Filter>features\main\functions\player</Filter>
+    </ClInclude>
+    <ClInclude Include="features\functions\player\misc.hpp">
+      <Filter>features\main\functions\player</Filter>
+    </ClInclude>
+    <ClInclude Include="features\functions\player\movement.hpp">
+      <Filter>features\main\functions\player</Filter>
+    </ClInclude>
+    <ClInclude Include="features\functions\player\physics.hpp">
+      <Filter>features\main\functions\player</Filter>
+    </ClInclude>
+    <ClInclude Include="features\functions\vehicle\health.hpp">
+      <Filter>features\main\functions\vehicle</Filter>
+    </ClInclude>
+    <ClInclude Include="features\functions\vehicle\misc.hpp">
+      <Filter>features\main\functions\vehicle</Filter>
+    </ClInclude>
+    <ClInclude Include="features\functions\vehicle\movement.hpp">
+      <Filter>features\main\functions\vehicle</Filter>
+    </ClInclude>
+    <ClInclude Include="features\functions\vehicle\physics.hpp">
+      <Filter>features\main\functions\vehicle</Filter>
+    </ClInclude>
+    <ClInclude Include="features\functions\clickwarp.hpp">
+      <Filter>features\main\functions</Filter>
+    </ClInclude>
+    <ClInclude Include="features\functions\func_utils.hpp">
+      <Filter>features\main\functions</Filter>
+    </ClInclude>
+    <ClInclude Include="features\functions\noclip.hpp">
+      <Filter>features\main\functions</Filter>
+    </ClInclude>
+    <ClInclude Include="features\functions\weapons.hpp">
+      <Filter>features\main\functions</Filter>
+    </ClInclude>
+    <ClInclude Include="features\functions\vehicle\hooks.hpp">
+      <Filter>features\main\functions\vehicle</Filter>
+    </ClInclude>
+    <ClInclude Include="features\visuals\world.hpp">
+      <Filter>features\main\functions\visuals</Filter>
+    </ClInclude>
+    <ClInclude Include="features\functions\player\hooks.hpp">
+      <Filter>features\main\functions\player</Filter>
+    </ClInclude>
+    <ClInclude Include="tickbase.hpp">
+      <Filter>features\native</Filter>
+    </ClInclude>
+    <ClInclude Include="features\threads.hpp">
+      <Filter>features\utils</Filter>
+    </ClInclude>
+    <ClInclude Include="features\functions\rage\testing.hpp">
+      <Filter>features\main\functions\rage</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="dllmain.cpp">
+      <Filter>main</Filter>
+    </ClCompile>
+    <ClCompile Include="..\includes\renderer\rend_features.cpp">
+      <Filter>renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\includes\imgui\imgui.cpp">
+      <Filter>imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="..\includes\imgui\imgui_draw.cpp">
+      <Filter>imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="..\includes\imgui\imgui_impl_dx11.cpp">
+      <Filter>imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="..\includes\imgui\imgui_impl_win32.cpp">
+      <Filter>imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="..\includes\imgui\imgui_tables.cpp">
+      <Filter>imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="..\includes\imgui\imgui_widgets.cpp">
+      <Filter>imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="ui\c_ui.cpp">
+      <Filter>ui</Filter>
+    </ClCompile>
+    <ClCompile Include="protection\strings\oxorany.cpp">
+      <Filter>main\protection\oxorany</Filter>
+    </ClCompile>
+    <ClCompile Include="ui\c_ui_misc.cpp">
+      <Filter>ui\widgets %28old%29</Filter>
+    </ClCompile>
+    <ClCompile Include="ui\c_fonts.cpp">
+      <Filter>ui\include</Filter>
+    </ClCompile>
+    <ClCompile Include="ui\content\aimbot_tab.cpp">
+      <Filter>ui\content %28tabs%29</Filter>
+    </ClCompile>
+    <ClCompile Include="ui\content\configs_tab.cpp">
+      <Filter>ui\content %28tabs%29</Filter>
+    </ClCompile>
+    <ClCompile Include="ui\content\player_tab.cpp">
+      <Filter>ui\content %28tabs%29</Filter>
+    </ClCompile>
+    <ClCompile Include="ui\content\settings_tab.cpp">
+      <Filter>ui\content %28tabs%29</Filter>
+    </ClCompile>
+    <ClCompile Include="ui\content\vehicle_tab.cpp">
+      <Filter>ui\content %28tabs%29</Filter>
+    </ClCompile>
+    <ClCompile Include="ui\content\visuals_tab.cpp">
+      <Filter>ui\content %28tabs%29</Filter>
+    </ClCompile>
+    <ClCompile Include="ui\content\weapons_tab.cpp">
+      <Filter>ui\content %28tabs%29</Filter>
+    </ClCompile>
+    <ClCompile Include="ui\content\world_tab.cpp">
+      <Filter>ui\content %28tabs%29</Filter>
+    </ClCompile>
+    <ClCompile Include="ui\widgets\button.cpp">
+      <Filter>ui\widgets\switchers</Filter>
+    </ClCompile>
+    <ClCompile Include="ui\widgets\checkbox.cpp">
+      <Filter>ui\widgets\switchers</Filter>
+    </ClCompile>
+    <ClCompile Include="ui\widgets\selectable.cpp">
+      <Filter>ui\widgets\switchers</Filter>
+    </ClCompile>
+    <ClCompile Include="ui\widgets\tabs.cpp">
+      <Filter>ui\widgets\switchers</Filter>
+    </ClCompile>
+    <ClCompile Include="ui\widgets\combo.cpp">
+      <Filter>ui\widgets\switchers</Filter>
+    </ClCompile>
+    <ClCompile Include="ui\widgets\keybind.cpp">
+      <Filter>ui\widgets\exact value</Filter>
+    </ClCompile>
+    <ClCompile Include="ui\widgets\inputbox.cpp">
+      <Filter>ui\widgets\exact value</Filter>
+    </ClCompile>
+    <ClCompile Include="ui\widgets\slider.cpp">
+      <Filter>ui\widgets\exact value</Filter>
+    </ClCompile>
+    <ClCompile Include="ui\widgets\child.cpp">
+      <Filter>ui\widgets\frames</Filter>
+    </ClCompile>
+    <ClCompile Include="ui\widgets\popups.cpp">
+      <Filter>ui\widgets\frames</Filter>
+    </ClCompile>
+    <ClCompile Include="ui\widgets\misc_ui.cpp">
+      <Filter>ui\widgets\misc</Filter>
+    </ClCompile>
+    <ClCompile Include="ui\include\c_cursor_wrapper.cpp">
+      <Filter>ui\include\cursor</Filter>
+    </ClCompile>
+    <ClCompile Include="ui\widgets\color.cpp">
+      <Filter>ui\widgets</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+</Project>

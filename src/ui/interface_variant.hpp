@@ -1,0 +1,69 @@
+#pragma once
+
+#ifndef CORTEX_UI_VARIANT
+#define CORTEX_UI_VARIANT 0
+#endif
+
+#if CORTEX_UI_VARIANT == 1
+#define CORTEX_MENU_W 920.f
+#define CORTEX_MENU_H 610.f
+#define CORTEX_NAV_X 34.f
+#define CORTEX_NAV_Y 64.f
+#define CORTEX_CONTENT_X 34.f
+#define CORTEX_CONTENT_Y 142.f
+#define CORTEX_CONTENT_Y_NO_SUB 96.f
+#define CORTEX_COL_W 414.f
+#define CORTEX_COL_H 430.f
+#define CORTEX_COL_H_NO_SUB 482.f
+#define CORTEX_COL_GAP 18.f
+#define CORTEX_SUBTAB_X 34.f
+#define CORTEX_SUBTAB_Y 90.f
+#define CORTEX_SUBTAB_W 852.f
+#elif CORTEX_UI_VARIANT == 2
+#define CORTEX_MENU_W 900.f
+#define CORTEX_MENU_H 620.f
+#define CORTEX_NAV_X 12.f
+#define CORTEX_NAV_Y 78.f
+#define CORTEX_CONTENT_X 104.f
+#define CORTEX_CONTENT_Y 112.f
+#define CORTEX_CONTENT_Y_NO_SUB 76.f
+#define CORTEX_COL_W 374.f
+#define CORTEX_COL_H 456.f
+#define CORTEX_COL_H_NO_SUB 500.f
+#define CORTEX_COL_GAP 18.f
+#define CORTEX_SUBTAB_X 104.f
+#define CORTEX_SUBTAB_Y 58.f
+#define CORTEX_SUBTAB_W 760.f
+#elif CORTEX_UI_VARIANT == 3
+#define CORTEX_MENU_W 900.f
+#define CORTEX_MENU_H 600.f
+#define CORTEX_NAV_X 36.f
+#define CORTEX_NAV_Y 546.f
+#define CORTEX_CONTENT_X 48.f
+#define CORTEX_CONTENT_Y 156.f
+#define CORTEX_CONTENT_Y_NO_SUB 112.f
+#define CORTEX_COL_W 392.f
+#define CORTEX_COL_H 360.f
+#define CORTEX_COL_H_NO_SUB 410.f
+#define CORTEX_COL_GAP 20.f
+#define CORTEX_SUBTAB_X 48.f
+#define CORTEX_SUBTAB_Y 92.f
+#define CORTEX_SUBTAB_W 804.f
+#else
+#define CORTEX_MENU_W 840.f
+#define CORTEX_MENU_H 560.f
+#define CORTEX_NAV_X 8.f
+#define CORTEX_NAV_Y 64.f
+#define CORTEX_CONTENT_X 178.f
+#define CORTEX_CONTENT_Y 125.f
+#define CORTEX_CONTENT_Y_NO_SUB 64.f
+#define CORTEX_COL_W 315.f
+#define CORTEX_COL_H 420.f
+#define CORTEX_COL_H_NO_SUB 480.f
+#define CORTEX_COL_GAP 12.f
+#define CORTEX_SUBTAB_X 178.f
+#define CORTEX_SUBTAB_Y 64.f
+#define CORTEX_SUBTAB_W 650.f
+#endif
+
+#define CORTEX_CONTENT_RIGHT_X (CORTEX_CONTENT_X + CORTEX_COL_W + CORTEX_COL_GAP)

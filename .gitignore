@@ -1,0 +1,13 @@
+/.vs
+/src/.vs
+**/.vs/
+/build
+*.pdb
+*.tlog
+*.obj
+*.iobj
+*.ipdb
+*.ilk
+*.exp
+*.log
+*.recipe
