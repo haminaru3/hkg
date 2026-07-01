@@ -1,0 +1,392 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>16.0</VCProjectVersion>
+    <ProjectGuid>{05A41833-32B5-4898-AF98-6EBDAD66F1FD}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>Cortex</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+    <ProjectName>Cortex</ProjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v145</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v145</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v145</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v145</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <LinkIncremental>false</LinkIncremental>
+    <IncludePath>$(SolutionDir)src\protection\ThemidaSDK\Include\C;$(SolutionDir)includes;$(DXSDK_DIR)Include;$(SolutionDir)includes\imgui;$(SolutionDir)includes\minhook\include;$(IncludePath)</IncludePath>
+    <LibraryPath>$(SolutionDir)src\protection\ThemidaSDK\Lib\COFF;$(DXSDK_DIR)Lib\x64;$(SolutionDir)includes\minhook\lib;$(LibraryPath)</LibraryPath>
+    <OutDir>$(SolutionDir)build\debug</OutDir>
+    <IntDir>$(SolutionDir)build\debug\build-cache</IntDir>
+    <TargetName>$(ProjectName)-dbg</TargetName>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <LinkIncremental>false</LinkIncremental>
+    <IncludePath>$(SolutionDir)src\protection\ThemidaSDK\Include\C;$(SolutionDir)includes;$(DXSDK_DIR)Include;$(SolutionDir)includes\imgui;$(SolutionDir)includes\minhook\include;$(IncludePath)</IncludePath>
+    <LibraryPath>$(SolutionDir)src\protection\ThemidaSDK\Lib\COFF;$(DXSDK_DIR)Lib\x64;$(SolutionDir)includes\minhook\build\VC16\lib\Release;$(LibraryPath)</LibraryPath>
+    <OutDir>$(SolutionDir)build\release</OutDir>
+    <IntDir>$(SolutionDir)build\release\build_cache</IntDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;_DEBUG;IMMUNITYGTA5_EXPORTS;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableUAC>false</EnableUAC>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <WarningLevel>TurnOffAllWarnings</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>_DEBUG;ENABLE_CONSOLE_LOGS;DISABLE_ALL_PROTECTION;MYLFCHEAT_EXPORTS;_WINDOWS;_USRDLL;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <SupportJustMyCode>false</SupportJustMyCode>
+      <WholeProgramOptimization>true</WholeProgramOptimization>
+      <BasicRuntimeChecks>Default</BasicRuntimeChecks>
+      <UseStandardPreprocessor>true</UseStandardPreprocessor>
+      <Optimization>MaxSpeed</Optimization>
+      <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <LanguageStandard_C>stdc17</LanguageStandard_C>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableUAC>false</EnableUAC>
+      <AdditionalDependencies>D3DX11.lib;Dwmapi.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <IgnoreSpecificDefaultLibraries>
+      </IgnoreSpecificDefaultLibraries>
+      <OptimizeReferences>true</OptimizeReferences>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <LinkTimeCodeGeneration>UseFastLinkTimeCodeGeneration</LinkTimeCodeGeneration>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;NDEBUG;IMMUNITYGTA5_EXPORTS;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableUAC>false</EnableUAC>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <WarningLevel>TurnOffAllWarnings</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;MYLFCHEAT_EXPORTS;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+      <WholeProgramOptimization>false</WholeProgramOptimization>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <UseStandardPreprocessor>true</UseStandardPreprocessor>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableUAC>false</EnableUAC>
+      <IgnoreSpecificDefaultLibraries>
+      </IgnoreSpecificDefaultLibraries>
+      <AdditionalDependencies>D3DX11.lib;Dwmapi.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;SecureEngineSDK64.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="..\includes\fixed_containers\algorithm.hpp" />
+    <ClInclude Include="..\includes\fixed_containers\arrow_proxy.hpp" />
+    <ClInclude Include="..\includes\fixed_containers\assert_or_abort.hpp" />
+    <ClInclude Include="..\includes\fixed_containers\bidirectional_iterator.hpp" />
+    <ClInclude Include="..\includes\fixed_containers\circular_indexing.hpp" />
+    <ClInclude Include="..\includes\fixed_containers\circular_integer_range_iterator.hpp" />
+    <ClInclude Include="..\includes\fixed_containers\comparison_chain.hpp" />
+    <ClInclude Include="..\includes\fixed_containers\concepts.hpp" />
+    <ClInclude Include="..\includes\fixed_containers\consteval_compare.hpp" />
+    <ClInclude Include="..\includes\fixed_containers\emplace.hpp" />
+    <ClInclude Include="..\includes\fixed_containers\enum_array.hpp" />
+    <ClInclude Include="..\includes\fixed_containers\enum_map.hpp" />
+    <ClInclude Include="..\includes\fixed_containers\enum_set.hpp" />
+    <ClInclude Include="..\includes\fixed_containers\enum_utils.hpp" />
+    <ClInclude Include="..\includes\fixed_containers\erase_if.hpp" />
+    <ClInclude Include="..\includes\fixed_containers\filtered_integer_range_iterator.hpp" />
+    <ClInclude Include="..\includes\fixed_containers\fixed_circular_deque.hpp" />
+    <ClInclude Include="..\includes\fixed_containers\fixed_circular_queue.hpp" />
+    <ClInclude Include="..\includes\fixed_containers\fixed_deque.hpp" />
+    <ClInclude Include="..\includes\fixed_containers\fixed_doubly_linked_list.hpp" />
+    <ClInclude Include="..\includes\fixed_containers\fixed_doubly_linked_list_raw_view.hpp" />
+    <ClInclude Include="..\includes\fixed_containers\fixed_index_based_storage.hpp" />
+    <ClInclude Include="..\includes\fixed_containers\fixed_list.hpp" />
+    <ClInclude Include="..\includes\fixed_containers\fixed_map.hpp" />
+    <ClInclude Include="..\includes\fixed_containers\fixed_map_adapter.hpp" />
+    <ClInclude Include="..\includes\fixed_containers\fixed_queue.hpp" />
+    <ClInclude Include="..\includes\fixed_containers\fixed_red_black_tree.hpp" />
+    <ClInclude Include="..\includes\fixed_containers\fixed_red_black_tree_nodes.hpp" />
+    <ClInclude Include="..\includes\fixed_containers\fixed_red_black_tree_ops.hpp" />
+    <ClInclude Include="..\includes\fixed_containers\fixed_red_black_tree_storage.hpp" />
+    <ClInclude Include="..\includes\fixed_containers\fixed_red_black_tree_types.hpp" />
+    <ClInclude Include="..\includes\fixed_containers\fixed_red_black_tree_view.hpp" />
+    <ClInclude Include="..\includes\fixed_containers\fixed_robinhood_hashtable.hpp" />
+    <ClInclude Include="..\includes\fixed_containers\fixed_set.hpp" />
+    <ClInclude Include="..\includes\fixed_containers\fixed_set_adapter.hpp" />
+    <ClInclude Include="..\includes\fixed_containers\fixed_stack.hpp" />
+    <ClInclude Include="..\includes\fixed_containers\fixed_string.hpp" />
+    <ClInclude Include="..\includes\fixed_containers\fixed_unordered_map.hpp" />
+    <ClInclude Include="..\includes\fixed_containers\fixed_unordered_map_raw_view.hpp" />
+    <ClInclude Include="..\includes\fixed_containers\fixed_unordered_set.hpp" />
+    <ClInclude Include="..\includes\fixed_containers\fixed_unordered_set_raw_view.hpp" />
+    <ClInclude Include="..\includes\fixed_containers\fixed_vector.hpp" />
+    <ClInclude Include="..\includes\fixed_containers\forward_iterator.hpp" />
+    <ClInclude Include="..\includes\fixed_containers\index_or_value_storage.hpp" />
+    <ClInclude Include="..\includes\fixed_containers\integer_range.hpp" />
+    <ClInclude Include="..\includes\fixed_containers\integer_range_iterator.hpp" />
+    <ClInclude Include="..\includes\fixed_containers\int_math.hpp" />
+    <ClInclude Include="..\includes\fixed_containers\in_out.hpp" />
+    <ClInclude Include="..\includes\fixed_containers\iterator_utils.hpp" />
+    <ClInclude Include="..\includes\fixed_containers\map_checking.hpp" />
+    <ClInclude Include="..\includes\fixed_containers\map_entry.hpp" />
+    <ClInclude Include="..\includes\fixed_containers\max_size.hpp" />
+    <ClInclude Include="..\includes\fixed_containers\memory.hpp" />
+    <ClInclude Include="..\includes\fixed_containers\optional_reference.hpp" />
+    <ClInclude Include="..\includes\fixed_containers\optional_reference_checking.hpp" />
+    <ClInclude Include="..\includes\fixed_containers\optional_storage.hpp" />
+    <ClInclude Include="..\includes\fixed_containers\out.hpp" />
+    <ClInclude Include="..\includes\fixed_containers\pair.hpp" />
+    <ClInclude Include="..\includes\fixed_containers\pair_view.hpp" />
+    <ClInclude Include="..\includes\fixed_containers\preconditions.hpp" />
+    <ClInclude Include="..\includes\fixed_containers\queue_adapter.hpp" />
+    <ClInclude Include="..\includes\fixed_containers\random_access_iterator.hpp" />
+    <ClInclude Include="..\includes\fixed_containers\random_access_iterator_transformer.hpp" />
+    <ClInclude Include="..\includes\fixed_containers\ranges.hpp" />
+    <ClInclude Include="..\includes\fixed_containers\recursive_reflection.hpp" />
+    <ClInclude Include="..\includes\fixed_containers\recursive_reflection_fwd.hpp" />
+    <ClInclude Include="..\includes\fixed_containers\reference_storage.hpp" />
+    <ClInclude Include="..\includes\fixed_containers\reflection.hpp" />
+    <ClInclude Include="..\includes\fixed_containers\sequence_container_checking.hpp" />
+    <ClInclude Include="..\includes\fixed_containers\set_checking.hpp" />
+    <ClInclude Include="..\includes\fixed_containers\source_location.hpp" />
+    <ClInclude Include="..\includes\fixed_containers\stack_adapter.hpp" />
+    <ClInclude Include="..\includes\fixed_containers\string_literal.hpp" />
+    <ClInclude Include="..\includes\fixed_containers\struct_view.hpp" />
+    <ClInclude Include="..\includes\fixed_containers\tuples.hpp" />
+    <ClInclude Include="..\includes\fixed_containers\tuples_as_tuple_view.hpp" />
+    <ClInclude Include="..\includes\fixed_containers\type_name.hpp" />
+    <ClInclude Include="..\includes\fixed_containers\value_or_reference_storage.hpp" />
+    <ClInclude Include="..\includes\fixed_containers\wyhash.hpp" />
+    <ClInclude Include="..\includes\hash_str.hpp" />
+    <ClInclude Include="..\includes\imgui\imconfig.h" />
+    <ClInclude Include="..\includes\imgui\imgui.h" />
+    <ClInclude Include="..\includes\imgui\imgui_impl_dx11.h" />
+    <ClInclude Include="..\includes\imgui\imgui_impl_win32.h" />
+    <ClInclude Include="..\includes\imgui\imgui_internal.h" />
+    <ClInclude Include="..\includes\imgui\imstb_rectpack.h" />
+    <ClInclude Include="..\includes\imgui\imstb_textedit.h" />
+    <ClInclude Include="..\includes\imgui\imstb_truetype.h" />
+    <ClInclude Include="..\includes\lazy_importer.hpp" />
+    <ClInclude Include="..\includes\renderer\rend_features.h" />
+    <ClInclude Include="cheat_base.h" />
+    <ClInclude Include="database.hpp" />
+    <ClInclude Include="features\aimbot.hpp" />
+    <ClInclude Include="features\esp.hpp" />
+    <ClInclude Include="features\functions\clickwarp.hpp" />
+    <ClInclude Include="features\functions\func_utils.hpp" />
+    <ClInclude Include="features\functions\noclip.hpp" />
+    <ClInclude Include="features\functions\player\health.hpp" />
+    <ClInclude Include="features\functions\player\hooks.hpp" />
+    <ClInclude Include="features\functions\player\misc.hpp" />
+    <ClInclude Include="features\functions\player\movement.hpp" />
+    <ClInclude Include="features\functions\player\physics.hpp" />
+    <ClInclude Include="features\functions\rage\testing.hpp" />
+    <ClInclude Include="features\functions\vehicle\health.hpp" />
+    <ClInclude Include="features\functions\vehicle\hooks.hpp" />
+    <ClInclude Include="features\functions\vehicle\misc.hpp" />
+    <ClInclude Include="features\functions\vehicle\movement.hpp" />
+    <ClInclude Include="features\functions\vehicle\physics.hpp" />
+    <ClInclude Include="features\functions\weapons.hpp" />
+    <ClInclude Include="features\hacks.hpp" />
+    <ClInclude Include="features\hacks_singleuse.hpp" />
+    <ClInclude Include="features\threads.hpp" />
+    <ClInclude Include="features\visuals\esp_utils.hpp" />
+    <ClInclude Include="features\visuals\objects.hpp" />
+    <ClInclude Include="features\visuals\players.hpp" />
+    <ClInclude Include="features\visuals\radar.hpp" />
+    <ClInclude Include="features\visuals\vehicles.hpp" />
+    <ClInclude Include="features\visuals\world.hpp" />
+    <ClInclude Include="fiber.hpp" />
+    <ClInclude Include="functions.h" />
+    <ClInclude Include="game.hpp" />
+    <ClInclude Include="c_config.hpp" />
+    <ClInclude Include="hooks.hpp" />
+    <ClInclude Include="imports.h" />
+    <ClInclude Include="keybind.hpp" />
+    <ClInclude Include="live_debug.hpp" />
+    <ClInclude Include="maps.hpp" />
+    <ClInclude Include="pointers.hpp" />
+    <ClInclude Include="protection\prot_defs.h" />
+    <ClInclude Include="protection\shadowsyscall.hpp" />
+    <ClInclude Include="peb.hpp" />
+    <ClInclude Include="protection\strings\oxorany.h" />
+    <ClInclude Include="protection\strings\oxorany_include.h" />
+    <ClInclude Include="structs.h" />
+    <ClInclude Include="tick.hpp" />
+    <ClInclude Include="tickbase.hpp" />
+    <ClInclude Include="ui\content\c_ui_tabs.hpp" />
+    <ClInclude Include="ui\c_fonts.h" />
+    <ClInclude Include="ui\c_ui.h" />
+    <ClInclude Include="ui\c_ui_misc.h" />
+    <ClInclude Include="ui\include\c_cursor_wrapper.h" />
+    <ClInclude Include="ui\include\esp_fonts_data.h" />
+    <ClInclude Include="ui\include\fonts_data.h" />
+    <ClInclude Include="ui\include\imstb_wrapper.h" />
+    <ClInclude Include="logger.h" />
+    <ClInclude Include="ui\widgets\c_ui_widgets.hpp" />
+    <ClInclude Include="ui\widgets\imgui_helpers.hpp" />
+    <ClInclude Include="xor.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\includes\imgui\imgui.cpp" />
+    <ClCompile Include="..\includes\imgui\imgui_draw.cpp" />
+    <ClCompile Include="..\includes\imgui\imgui_impl_dx11.cpp" />
+    <ClCompile Include="..\includes\imgui\imgui_impl_win32.cpp" />
+    <ClCompile Include="..\includes\imgui\imgui_tables.cpp" />
+    <ClCompile Include="..\includes\imgui\imgui_widgets.cpp" />
+    <ClCompile Include="..\includes\renderer\rend_features.cpp" />
+    <ClCompile Include="dllmain.cpp" />
+    <ClCompile Include="protection\strings\oxorany.cpp" />
+    <ClCompile Include="ui\content\aimbot_tab.cpp" />
+    <ClCompile Include="ui\content\configs_tab.cpp" />
+    <ClCompile Include="ui\content\player_tab.cpp" />
+    <ClCompile Include="ui\content\settings_tab.cpp" />
+    <ClCompile Include="ui\content\vehicle_tab.cpp" />
+    <ClCompile Include="ui\content\visuals_tab.cpp" />
+    <ClCompile Include="ui\content\weapons_tab.cpp" />
+    <ClCompile Include="ui\content\world_tab.cpp" />
+    <ClCompile Include="ui\c_fonts.cpp" />
+    <ClCompile Include="ui\c_ui.cpp" />
+    <ClCompile Include="ui\c_ui_misc.cpp" />
+    <ClCompile Include="ui\include\c_cursor_wrapper.cpp" />
+    <ClCompile Include="ui\widgets\button.cpp" />
+    <ClCompile Include="ui\widgets\checkbox.cpp" />
+    <ClCompile Include="ui\widgets\child.cpp" />
+    <ClCompile Include="ui\widgets\color.cpp" />
+    <ClCompile Include="ui\widgets\combo.cpp" />
+    <ClCompile Include="ui\widgets\inputbox.cpp" />
+    <ClCompile Include="ui\widgets\keybind.cpp" />
+    <ClCompile Include="ui\widgets\misc_ui.cpp" />
+    <ClCompile Include="ui\widgets\popups.cpp" />
+    <ClCompile Include="ui\widgets\selectable.cpp" />
+    <ClCompile Include="ui\widgets\slider.cpp" />
+    <ClCompile Include="ui\widgets\tabs.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+    <Import Project="..\packages\nlohmann.json.3.9.1\build\native\nlohmann.json.targets" Condition="Exists('..\packages\nlohmann.json.3.9.1\build\native\nlohmann.json.targets')" />
+  </ImportGroup>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>Dieses Projekt verweist auf mindestens ein NuGet-Paket, das auf diesem Computer fehlt. Verwenden Sie die Wiederherstellung von NuGet-Paketen, um die fehlenden Dateien herunterzuladen. Weitere Informationen finden Sie unter "http://go.microsoft.com/fwlink/?LinkID=322105". Die fehlende Datei ist "{0}".</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\nlohmann.json.3.9.1\build\native\nlohmann.json.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\nlohmann.json.3.9.1\build\native\nlohmann.json.targets'))" />
+  </Target>
+</Project>
