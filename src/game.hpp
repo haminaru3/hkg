@@ -237,8 +237,6 @@ namespace game {
 						auto ped_handle = pointer_to_handle((uintptr_t)ped);
 						//bool ped_gm = native::player::get_player_invincible(ped_handle);
 
-						if(ped->HP <= 0) continue; // dead check
-
 						if (!g_config->esp.local.skeleton && local.player == ped) continue; // local ignore
 
 						DWORD hash = ped->ModelInfo()->GetHash(); // ped check
