@@ -133,10 +133,7 @@ void c_userinterface::bg_color() {
     ImVec2 displaySize = ImGui::GetIO().DisplaySize;
     ImDrawList* draw_list = ImGui::GetForegroundDrawList();
     if (!start_animation) {
-        ImGui::PushFont(ui_fonts[e_fonts::DECIMA]);
-        std::string init_title = std::string("> ") + menu_title_text();
-        type_text_anim(m_crypt("successfully initialized."), init_title.c_str(), ImVec2(windowSize.x / 2, windowSize.y / 2), 1.f, 1.f, start_animation);
-        ImGui::PopFont();
+        start_animation = true;
     }
 
     ImGui::PopStyleColor(1);
