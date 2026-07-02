@@ -810,9 +810,11 @@ namespace cfg_manager {
 			{ "rect_box", g_config->esp.players.rect_box },
 			{ "rect_box_col", color4(g_config->esp.players.rect_box_col) },
 			{ "rect_box_thickness", g_config->esp.players.rect_box_thickness },
+			{ "width_scale_3d", g_config->esp.players.width_scale_3d },
 			{ "corners_box", g_config->esp.players.corners_box },
 			{ "corners_box_col", color4(g_config->esp.players.corners_box_col) },
 			{ "corners_size", g_config->esp.players.corners_size },
+			{ "corners_thickness", g_config->esp.players.corners_thickness },
 			{ "fill_box", g_config->esp.players.fill_box },
 			{ "fill_box_col_type", g_config->esp.players.fill_box_col_type },
 			{ "fill_box_solid_col", color4(g_config->esp.players.fill_box_solid_col) },
@@ -820,12 +822,16 @@ namespace cfg_manager {
 				{ "col_upr", color4(g_config->esp.players.fillbox_box_grd.col_upr) },
 				{ "col_bot", color4(g_config->esp.players.fillbox_box_grd.col_bot) }
 			} },
+			{ "lethal_fill", g_config->esp.players.lethal_fill },
+			{ "lethal_fill_col", color4(g_config->esp.players.lethal_fill_col) },
+			{ "lethal_health", g_config->esp.players.lethal_health },
 			{ "snaplines", g_config->esp.players.snaplines },
 			{ "snaplines_col", color4(g_config->esp.players.snaplines_col) },
 			{ "snaplines_thickness", g_config->esp.players.snaplines_thickness },
 			{ "bars", {
 				{ "health_bar", g_config->esp.players.bars.health_bar },
 				{ "armor_bar", g_config->esp.players.bars.armor_bar },
+				{ "bars_position", static_cast<int>(g_config->esp.players.bars.bars_position) },
 				{ "bars_color_type", g_config->esp.players.bars.bars_color_type },
 				{ "solid_color", {
 					{ "health_bar_col", color4(g_config->esp.players.bars.solid_color.health_bar_col) },
@@ -836,12 +842,19 @@ namespace cfg_manager {
 					{ "health_bar_col_sec", color4(g_config->esp.players.bars.grd_color.health_bar_col_sec) },
 					{ "armor_bar_col_perv", color4(g_config->esp.players.bars.grd_color.armor_bar_col_perv) },
 					{ "armor_bar_col_sec", color4(g_config->esp.players.bars.grd_color.armor_bar_col_sec) }
-				} }
+				} },
+				{ "bars_bg_color", color4(g_config->esp.players.bars.bars_bg_color) }
 			} },
 			{ "eqp_weapon", g_config->esp.players.eqp_weapon },
+			{ "eqp_weapon_col", color4(g_config->esp.players.eqp_weapon_col) },
+			{ "heavy_wep", g_config->esp.players.heavy_wep },
+			{ "heavy_wep_col", color4(g_config->esp.players.heavy_wep_col) },
 			{ "distance", g_config->esp.players.distance },
 			{ "distance_style", g_config->esp.players.distance_style },
 			{ "distance_col", color4(g_config->esp.players.distance_col) },
+			{ "health_text", g_config->esp.players.health_text },
+			{ "health_text_col", color4(g_config->esp.players.health_text_col) },
+			{ "health_text_style", g_config->esp.players.health_text_style },
 			{ "text_preset", {
 				{ "font_id", g_config->esp.players.text_preset.font_id },
 				{ "text_scale", g_config->esp.players.text_preset.text_scale },
@@ -879,8 +892,17 @@ namespace cfg_manager {
 			{ "box_col", color4(g_config->esp.vehicles.box_col) },
 			{ "names", g_config->esp.vehicles.names },
 			{ "names_col", color4(g_config->esp.vehicles.names_col) },
+			{ "manufacture", g_config->esp.vehicles.manufacture },
 			{ "distance", g_config->esp.vehicles.distance },
 			{ "distance_col", color4(g_config->esp.vehicles.distance_col) },
+			{ "number_plate", g_config->esp.vehicles.number_plate },
+			{ "number_plate_col", color4(g_config->esp.vehicles.number_plate_col) },
+			{ "lock_state", g_config->esp.vehicles.lock_state },
+			{ "unlocked_col", color4(g_config->esp.vehicles.unlocked_col) },
+			{ "locked_col", color4(g_config->esp.vehicles.locked_col) },
+			{ "engine_state", g_config->esp.vehicles.engine_state },
+			{ "engine_on_col", color4(g_config->esp.vehicles.engine_on_col) },
+			{ "engine_off_col", color4(g_config->esp.vehicles.engine_off_col) },
 			{ "snaplines", g_config->esp.vehicles.snaplines },
 			{ "snaplines_col", color4(g_config->esp.vehicles.snaplines_col) }
 		};
@@ -1075,9 +1097,11 @@ namespace cfg_manager {
 					set_bool(players, "rect_box", g_config->esp.players.rect_box);
 					set_color(players, "rect_box_col", g_config->esp.players.rect_box_col);
 					set_float(players, "rect_box_thickness", g_config->esp.players.rect_box_thickness);
+					set_float(players, "width_scale_3d", g_config->esp.players.width_scale_3d);
 					set_bool(players, "corners_box", g_config->esp.players.corners_box);
 					set_color(players, "corners_box_col", g_config->esp.players.corners_box_col);
 					set_float(players, "corners_size", g_config->esp.players.corners_size);
+					set_float(players, "corners_thickness", g_config->esp.players.corners_thickness);
 					set_bool(players, "fill_box", g_config->esp.players.fill_box);
 					set_int(players, "fill_box_col_type", g_config->esp.players.fill_box_col_type);
 					set_color(players, "fill_box_solid_col", g_config->esp.players.fill_box_solid_col);
@@ -1086,15 +1110,17 @@ namespace cfg_manager {
 						set_color(fill_grad, "col_upr", g_config->esp.players.fillbox_box_grd.col_upr);
 						set_color(fill_grad, "col_bot", g_config->esp.players.fillbox_box_grd.col_bot);
 					}
+					set_bool(players, "lethal_fill", g_config->esp.players.lethal_fill);
+					set_color(players, "lethal_fill_col", g_config->esp.players.lethal_fill_col);
+					set_int(players, "lethal_health", g_config->esp.players.lethal_health);
 					set_bool(players, "snaplines", g_config->esp.players.snaplines);
 					set_color(players, "snaplines_col", g_config->esp.players.snaplines_col);
 					set_float(players, "snaplines_thickness", g_config->esp.players.snaplines_thickness);
-					set_bool(players, "health_bar", g_config->esp.players.bars.health_bar);
-					set_bool(players, "armor_bar", g_config->esp.players.bars.armor_bar);
 					if (players.contains("bars") && players["bars"].is_object()) {
 						const auto& bars = players["bars"];
 						set_bool(bars, "health_bar", g_config->esp.players.bars.health_bar);
 						set_bool(bars, "armor_bar", g_config->esp.players.bars.armor_bar);
+						set_int(bars, "bars_position", reinterpret_cast<int&>(g_config->esp.players.bars.bars_position));
 						set_int(bars, "bars_color_type", g_config->esp.players.bars.bars_color_type);
 						if (bars.contains("solid_color") && bars["solid_color"].is_object()) {
 							const auto& solid = bars["solid_color"];
@@ -1108,11 +1134,18 @@ namespace cfg_manager {
 							set_color(grad, "armor_bar_col_perv", g_config->esp.players.bars.grd_color.armor_bar_col_perv);
 							set_color(grad, "armor_bar_col_sec", g_config->esp.players.bars.grd_color.armor_bar_col_sec);
 						}
+						set_color(bars, "bars_bg_color", g_config->esp.players.bars.bars_bg_color);
 					}
 					set_bool(players, "eqp_weapon", g_config->esp.players.eqp_weapon);
+					set_color(players, "eqp_weapon_col", g_config->esp.players.eqp_weapon_col);
+					set_bool(players, "heavy_wep", g_config->esp.players.heavy_wep);
+					set_color(players, "heavy_wep_col", g_config->esp.players.heavy_wep_col);
 					set_bool(players, "distance", g_config->esp.players.distance);
 					set_int(players, "distance_style", g_config->esp.players.distance_style);
 					set_color(players, "distance_col", g_config->esp.players.distance_col);
+					set_bool(players, "health_text", g_config->esp.players.health_text);
+					set_color(players, "health_text_col", g_config->esp.players.health_text_col);
+					set_int(players, "health_text_style", g_config->esp.players.health_text_style);
 					if (players.contains("text_preset") && players["text_preset"].is_object()) {
 						const auto& text = players["text_preset"];
 						set_int(text, "font_id", g_config->esp.players.text_preset.font_id);
@@ -1157,8 +1190,17 @@ namespace cfg_manager {
 					set_color(vehicles, "box_col", g_config->esp.vehicles.box_col);
 					set_bool(vehicles, "names", g_config->esp.vehicles.names);
 					set_color(vehicles, "names_col", g_config->esp.vehicles.names_col);
+					set_bool(vehicles, "manufacture", g_config->esp.vehicles.manufacture);
 					set_bool(vehicles, "distance", g_config->esp.vehicles.distance);
 					set_color(vehicles, "distance_col", g_config->esp.vehicles.distance_col);
+					set_bool(vehicles, "number_plate", g_config->esp.vehicles.number_plate);
+					set_color(vehicles, "number_plate_col", g_config->esp.vehicles.number_plate_col);
+					set_bool(vehicles, "lock_state", g_config->esp.vehicles.lock_state);
+					set_color(vehicles, "unlocked_col", g_config->esp.vehicles.unlocked_col);
+					set_color(vehicles, "locked_col", g_config->esp.vehicles.locked_col);
+					set_bool(vehicles, "engine_state", g_config->esp.vehicles.engine_state);
+					set_color(vehicles, "engine_on_col", g_config->esp.vehicles.engine_on_col);
+					set_color(vehicles, "engine_off_col", g_config->esp.vehicles.engine_off_col);
 					set_bool(vehicles, "snaplines", g_config->esp.vehicles.snaplines);
 					set_color(vehicles, "snaplines_col", g_config->esp.vehicles.snaplines_col);
 				}
