@@ -8,7 +8,6 @@ namespace esp {
 		cheat_base->admin_counter = 0;
 		cheat_base->closest_dist = 0;
 		for (pair<CObject*, DataPed>& entity : game::ped_list) {
-		  __try {
 			CObject* ped = entity.first;
 			DataPed data = entity.second;
 			if (!IsValidPtr(ped) || !IsValidPtr(local.player)) continue;
@@ -301,8 +300,6 @@ namespace esp {
 			//	textRow += 1;
 			//	totalTextSpacing += data.flags[i].size;
 			//}
-		  }
-		  __except (EXCEPTION_EXECUTE_HANDLER) { continue; }
 		}
 
 		return;

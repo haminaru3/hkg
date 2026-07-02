@@ -177,13 +177,9 @@ namespace aimbot {
 				continue;
 			}
 
-			DWORD hash = 0;
-			__try {
-				if (ped->HP <= 0) continue;
-				if (!IsValidPtr(ped->ModelInfo())) continue;
-				hash = ped->ModelInfo()->GetHash();
-			}
-			__except (EXCEPTION_EXECUTE_HANDLER) { continue; }
+			if (ped->HP <= 0) continue;
+			if (!IsValidPtr(ped->ModelInfo())) continue;
+			DWORD hash = ped->ModelInfo()->GetHash();
 
 			if (!game::isValidPlayer(hash, ped) && !g_config->aimbot.vector.filters.target_npcs) {
 				continue;
@@ -248,13 +244,9 @@ namespace aimbot {
 				continue;
 			}
 
-			DWORD hash = 0;
-			__try {
-				if (ped->HP <= 0) continue;
-				if (!IsValidPtr(ped->ModelInfo())) continue;
-				hash = ped->ModelInfo()->GetHash();
-			}
-			__except (EXCEPTION_EXECUTE_HANDLER) { continue; }
+			if (ped->HP <= 0) continue;
+			if (!IsValidPtr(ped->ModelInfo())) continue;
+			DWORD hash = ped->ModelInfo()->GetHash();
 
 			if (!game::isValidPlayer(hash, ped) && !g_config->aimbot.silent.filters.target_npcs) {
 				continue;

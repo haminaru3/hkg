@@ -4,7 +4,6 @@
 namespace esp {
 	void vehicles_frame() {
 		for (auto& this_vehicle : game::vehicle_list) {
-		  __try {
 			CVehicle* veh = this_vehicle.first;
 			DataVehicle& data = this_vehicle.second;
 			if (!IsValidPtr(veh) || !IsValidPtr(local.player)) continue;
@@ -83,8 +82,6 @@ namespace esp {
 					textRow++;
 				}
 			}
-		  }
-		  __except (EXCEPTION_EXECUTE_HANDLER) { continue; }
 		}
 	}
 }
