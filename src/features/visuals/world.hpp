@@ -11,15 +11,12 @@ namespace functions {
 					orig_h = native::time::get_clock_hours();
 					orig_m = native::time::get_clock_minutes();
 				}
-				if (native::time::get_clock_hours() != g_config->world.visuals.time_hour) {
-					native::network::network_override_clock_time(g_config->world.visuals.time_hour, g_config->world.visuals.time_minute, 0);
-					native::time::set_clock_time(g_config->world.visuals.time_hour, g_config->world.visuals.time_minute, 0);
-					native::time::pause_clock(true);
-					time_changed = true;
-				}
-
-			} if (time_changed && !g_config->world.visuals.timechanger) { //-V646
-				native::network::network_override_clock_time(orig_h, orig_m, 0);
+				native::network::network_override_clock_time(g_config->world.visuals.time_hour, g_config->world.visuals.time_minute, 0);
+				native::time::set_clock_time(g_config->world.visuals.time_hour, g_config->world.visuals.time_minute, 0);
+				native::time::pause_clock(true);
+				time_changed = true;
+			} else if (time_changed) {
+				native::network::network_clear_clock_time_override();
 				native::time::set_clock_time(orig_h, orig_m, 0);
 				native::time::pause_clock(false);
 				time_changed = false;
