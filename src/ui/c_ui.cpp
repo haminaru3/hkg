@@ -132,10 +132,6 @@ void c_userinterface::bg_color() {
 
     ImVec2 displaySize = ImGui::GetIO().DisplaySize;
     ImDrawList* draw_list = ImGui::GetForegroundDrawList();
-    if (!start_animation) {
-        start_animation = true;
-    }
-
     ImGui::PopStyleColor(1);
     ImGui::PopStyleVar(3);
 

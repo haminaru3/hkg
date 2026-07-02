@@ -12,7 +12,7 @@ private:
 	static char user_id[64];
 	static char build_id[8];
 
-	bool start_animation = false;
+	bool start_animation = true;
 
 	// main menu close/open anim
 	float animation_progress;
