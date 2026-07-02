@@ -767,13 +767,13 @@ namespace cfg_manager {
 		nlohmann::json root;
 		root["_name"] = config_name;
 		root["aimbot"] = {
-			{ "vector", { { "enabled", false }, { "target_bones", 2 } } },
-			{ "silent", { { "enabled", false }, { "target_bones", 2 } } },
-			{ "trigger", { { "enabled", false } } }
+			{ "vector", { { "enabled", g_config->aimbot.vector.enabled }, { "target_bones", 2 } } },
+			{ "silent", { { "enabled", g_config->aimbot.silent.enabled }, { "target_bones", 2 } } },
+			{ "trigger", { { "enabled", g_config->aimbot.trigger.enabled } } }
 		};
-		root["player"]["movement"]["noclip"]["enabled"] = false;
-		root["player"]["movement"]["freecam"]["enabled"] = false;
-		root["player"]["movement"]["freecam"]["main_state"] = false;
+		root["player"]["movement"]["noclip"]["enabled"] = g_config->player.movement.noclip.enabled;
+		root["player"]["movement"]["freecam"]["enabled"] = g_config->player.movement.freecam.enabled;
+		root["player"]["movement"]["freecam"]["main_state"] = g_config->player.movement.freecam.main_state;
 
 		if (!g_config) return root.dump();
 
@@ -792,7 +792,7 @@ namespace cfg_manager {
 			} }
 		};
 		root["controls"] = {
-			{ "menu_state", false },
+			{ "menu_state", g_config->controls.menu_state },
 			{ "menu_custom_key", g_config->controls.menu_custom_key },
 			{ "menu_key", clamp_copy_int(g_config->controls.menu_key, 1, 255, VK_INSERT) },
 			{ "unload_on_key", false },
@@ -800,7 +800,7 @@ namespace cfg_manager {
 		};
 
 		root["esp"]["players"] = {
-			{ "enabled", false },
+			{ "enabled", g_config->esp.players.enabled },
 			{ "max_dist", g_config->esp.players.max_dist },
 			{ "skeleton", g_config->esp.players.skeleton },
 			{ "skeleton_visible_col", color4(g_config->esp.players.skeleton_visible_col) },
@@ -852,7 +852,7 @@ namespace cfg_manager {
 			} }
 		};
 		root["esp"]["admins"] = {
-			{ "enabled", false },
+			{ "enabled", g_config->esp.admins.enabled },
 			{ "skeleton", g_config->esp.admins.skeleton },
 			{ "skeleton_col", color4(g_config->esp.admins.skeleton_col) },
 			{ "rect_box", g_config->esp.admins.rect_box },
@@ -862,7 +862,7 @@ namespace cfg_manager {
 			{ "widget_enabled", g_config->esp.admins.widget.enabled }
 		};
 		root["esp"]["objects"] = {
-			{ "enabled", false },
+			{ "enabled", g_config->esp.objects.enabled },
 			{ "max_dist", g_config->esp.objects.max_dist },
 			{ "names", g_config->esp.objects.names },
 			{ "names_col", color4(g_config->esp.objects.names_col) },
@@ -872,7 +872,7 @@ namespace cfg_manager {
 			{ "snaplines_col", color4(g_config->esp.objects.snaplines_col) }
 		};
 		root["esp"]["vehicles"] = {
-			{ "enabled", false },
+			{ "enabled", g_config->esp.vehicles.enabled },
 			{ "max_dist", g_config->esp.vehicles.max_dist },
 			{ "ignore_local", g_config->esp.vehicles.ignore_local },
 			{ "box", g_config->esp.vehicles.box },
@@ -885,7 +885,7 @@ namespace cfg_manager {
 			{ "snaplines_col", color4(g_config->esp.vehicles.snaplines_col) }
 		};
 		root["esp"]["radar"] = {
-			{ "enabled", false },
+			{ "enabled", g_config->esp.radar.enabled },
 			{ "zoom", g_config->esp.radar.zoom },
 			{ "rounding", g_config->esp.radar.rounding },
 			{ "opacity", g_config->esp.radar.opacity },
@@ -1000,7 +1000,6 @@ namespace cfg_manager {
 		if (!g_config) return;
 
 		const bool previous_menu_state = g_config->controls.menu_state;
-		disable_runtime_toggles(*g_config);
 
 		auto parsed = nlohmann::json::parse(buffer, nullptr, false);
 		if (!parsed.is_discarded() && parsed.is_object()) {
@@ -1049,10 +1048,24 @@ namespace cfg_manager {
 				set_int(controls, "menu_key", g_config->controls.menu_key);
 			}
 
+			if (parsed.contains("aimbot") && parsed["aimbot"].is_object()) {
+				const auto& aimbot = parsed["aimbot"];
+				if (aimbot.contains("vector") && aimbot["vector"].is_object()) {
+					set_bool(aimbot["vector"], "enabled", g_config->aimbot.vector.enabled);
+				}
+				if (aimbot.contains("silent") && aimbot["silent"].is_object()) {
+					set_bool(aimbot["silent"], "enabled", g_config->aimbot.silent.enabled);
+				}
+				if (aimbot.contains("trigger") && aimbot["trigger"].is_object()) {
+					set_bool(aimbot["trigger"], "enabled", g_config->aimbot.trigger.enabled);
+				}
+			}
+
 			if (parsed.contains("esp") && parsed["esp"].is_object()) {
 				const auto& esp = parsed["esp"];
 				if (esp.contains("players") && esp["players"].is_object()) {
 					const auto& players = esp["players"];
+					set_bool(players, "enabled", g_config->esp.players.enabled);
 					set_float(players, "max_dist", g_config->esp.players.max_dist);
 					set_bool(players, "skeleton", g_config->esp.players.skeleton);
 					set_color(players, "skeleton_visible_col", g_config->esp.players.skeleton_visible_col);
@@ -1113,6 +1126,7 @@ namespace cfg_manager {
 
 				if (esp.contains("admins") && esp["admins"].is_object()) {
 					const auto& admins = esp["admins"];
+					set_bool(admins, "enabled", g_config->esp.admins.enabled);
 					set_bool(admins, "skeleton", g_config->esp.admins.skeleton);
 					set_color(admins, "skeleton_col", g_config->esp.admins.skeleton_col);
 					set_bool(admins, "rect_box", g_config->esp.admins.rect_box);
@@ -1124,6 +1138,7 @@ namespace cfg_manager {
 
 				if (esp.contains("objects") && esp["objects"].is_object()) {
 					const auto& objects = esp["objects"];
+					set_bool(objects, "enabled", g_config->esp.objects.enabled);
 					set_float(objects, "max_dist", g_config->esp.objects.max_dist);
 					set_bool(objects, "names", g_config->esp.objects.names);
 					set_color(objects, "names_col", g_config->esp.objects.names_col);
@@ -1135,6 +1150,7 @@ namespace cfg_manager {
 
 				if (esp.contains("vehicles") && esp["vehicles"].is_object()) {
 					const auto& vehicles = esp["vehicles"];
+					set_bool(vehicles, "enabled", g_config->esp.vehicles.enabled);
 					set_float(vehicles, "max_dist", g_config->esp.vehicles.max_dist);
 					set_bool(vehicles, "ignore_local", g_config->esp.vehicles.ignore_local);
 					set_bool(vehicles, "box", g_config->esp.vehicles.box);
@@ -1149,6 +1165,7 @@ namespace cfg_manager {
 
 				if (esp.contains("radar") && esp["radar"].is_object()) {
 					const auto& radar = esp["radar"];
+					set_bool(radar, "enabled", g_config->esp.radar.enabled);
 					set_float(radar, "zoom", g_config->esp.radar.zoom);
 					set_float(radar, "rounding", g_config->esp.radar.rounding);
 					set_float(radar, "opacity", g_config->esp.radar.opacity);
@@ -1167,7 +1184,6 @@ namespace cfg_manager {
 			g_config->aimbot.vector.target_bones = 2;
 			g_config->aimbot.silent.target_bones = 2;
 			sanitize_config_values(*g_config);
-			disable_runtime_toggles(*g_config);
 			g_config->controls.menu_state = previous_menu_state;
 			g_config->controls.unload_on_key = false;
 			return;
@@ -1191,7 +1207,6 @@ namespace cfg_manager {
 		g_config->aimbot.silent.target_bones = 2;
 
 		sanitize_config_values(*g_config);
-		disable_runtime_toggles(*g_config);
 		g_config->controls.menu_state = previous_menu_state;
 		g_config->controls.unload_on_key = false;
 	}
@@ -1329,7 +1344,6 @@ namespace cfg_manager {
 
 	inline void sanitize_loaded_config(c_variables& cfg, const c_variables& previous) {
 		sanitize_config_values(cfg);
-		disable_runtime_toggles(cfg);
 
 		cfg.controls.menu_state = previous.controls.menu_state;
 		cfg.controls.unload_on_key = false;
