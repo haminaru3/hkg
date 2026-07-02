@@ -23,14 +23,13 @@ namespace functions {
 			}
 		}
 		void weatherchanger() {
-			static bool weather_changed = false; static int w_changed_index = 0;
-			if (w_changed_index != g_config->world.visuals.weather_type && g_config->world.visuals.weatherchanger) {
-				//if (cur_weather_hash() != weather_types_hashes[g_config->world.visuals.weather_type]) {
+			static bool weather_changed = false;
+			if (g_config->world.visuals.weatherchanger) {
 				utils::set_weather_by_index(g_config->world.visuals.weather_type);
-				weather_changed = true; w_changed_index = g_config->world.visuals.weather_type;
-				//}
-			} if (weather_changed && !g_config->world.visuals.weatherchanger) { //-V646
-				utils::set_weather_by_index(0);
+				weather_changed = true;
+			} else if (weather_changed) {
+				native::gameplay::clear_override_weather();
+				native::gameplay::clear_weather_type_persist();
 				weather_changed = false;
 			}
 		}
