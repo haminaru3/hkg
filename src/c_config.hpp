@@ -593,7 +593,7 @@ public:
 	} world;
 
 	struct controls_struct {
-		bool menu_state = false;
+		bool menu_state = true;
 		bool menu_custom_key = false;
 		int menu_key = VK_INSERT;
 
